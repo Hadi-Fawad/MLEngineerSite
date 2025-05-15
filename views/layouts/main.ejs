@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | 2025SITE-1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.svg">
+</head>
+<body>
+  <div id="page-reveal"></div>
+  <div class="main-content">
+    <%- body %>
+  </div>
+  
+  <script src="/js/main.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var card = document.querySelector('.profile-card');
+      var shadow = document.querySelector('.profile-card-shadow');
+      setTimeout(function() {
+        if(card) card.classList.add('slide-in');
+        if(shadow) shadow.classList.add('slide-in');
+      }, 1); // slight delay for effect
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        document.getElementById('page-reveal').classList.add('hide');
+      }, 400); // Delay before sliding out (adjust as desired)
+    });
+  </script>
+</body>
+</html>
